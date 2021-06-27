@@ -9,16 +9,16 @@
 int main(void)
 {
 	int i;
-	long long int f, k = 0, j = 1;
+	double f, k = 0, j = 1;
 
-	for (i = 0; i <= 50; i++)
+	for (i = 0; i < 50; i++)
 	{
 		f = k + j;
 		j = f;
 		k = f - k;
-		printf("%lld", f);
+		printf("%.f", f);
 
-		if (i < 50)
+		if (i < 49)
 			printf(", ");
 	}
 	printf("\n");
