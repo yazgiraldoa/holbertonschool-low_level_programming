@@ -1,12 +1,12 @@
 #include "holberton.h"
 
 /**
-* _strstr - function that searches a string for any of a set of bytes
+* _strstr - function that locates a substring
 *
 * @haystack: pointer to the original string
-* @needle: the characters that will be checked
+* @needle: substring that will be checked
 *
-* Return: the pointer or null
+* Return: the pointer in first position of coincidence or null
 */
 
 char *_strstr(char *haystack, char *needle)
