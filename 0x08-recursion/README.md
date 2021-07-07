@@ -2,7 +2,7 @@
 
 Learning Objectives
 
-How to implement recursion
-In what situations you should implement recursion
-In what situations you shouldn’t implement recursion
+How to implement recursion. \n
+In what situations you should implement recursion \n
+In what situations you shouldn’t implement recursion \n
 
