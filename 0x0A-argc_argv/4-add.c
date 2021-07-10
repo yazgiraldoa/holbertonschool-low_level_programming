@@ -1,19 +1,16 @@
 #include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
-
 /**
 * main - program that adds positive numbers
-*
 * @argc: argument count
 * @argv: argument vector
-*
 * Return: 0 is success or 1 is error
 */
-
 int main(int argc, char *argv[])
 {
 	int i, sum = 0;
+	char *p;
 
 	if (argc == 1)
 	{
@@ -23,15 +20,18 @@ int main(int argc, char *argv[])
 
 	for (i = 1; i < argc; i++)
 	{
-		if (*argv[i] > 48 && *argv[i] < 57)
+		p = argv[i];
+
+		while (*p)
 		{
+			if (*p < 48 || *p > 57)
+			{
+				printf("Error\n");
+				return (1);
+			}
+			p++;
+		}
 			sum += atoi(argv[i]);
-		}
-		else
-		{
-			printf("Error\n");
-			return (1);
-		}
 	}
 
 	printf("%d\n", sum);
