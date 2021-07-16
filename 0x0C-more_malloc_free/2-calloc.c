@@ -1,5 +1,7 @@
 #include "holberton.h"
 #include <stdlib.h>
+#include <stddef.h>
+#include <stdio.h>
 
 /**
 * _calloc - function that allocates memory for an array, using malloc
@@ -14,14 +16,14 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	char *p;
 
 	if (size == 0 || nmemb == 0)
-		return (0);
+		return (NULL);
 
 	p = malloc(nmemb * size);
 
-	if (p == 0)
-		return (0);
+	if (p == NULL)
+		return (NULL);
 
-	while (i < nmemb)
+	while (i < (nmemb * size))
 	{
 		p[i] = 0;
 		i++;
