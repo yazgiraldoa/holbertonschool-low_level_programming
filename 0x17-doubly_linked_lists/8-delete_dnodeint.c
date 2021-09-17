@@ -28,19 +28,18 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	}
 	to_delete = to_delete->next;
 	aux2 = aux2->next;
-	while (aux1)
-	{
-		if (node == (index - 1))
-		{
-			aux1->next = aux2->next;
-			aux2->next->prev = aux1;
-			free(to_delete);
-			return (1);
-		}
-		node++;
+	while (aux2 && node < (index - 1))
+	{	node++;
 		aux1 = aux1->next;
 		aux2 = aux2->next;
-		to_delete = to_delete->next;
+		to_delete = to_delete->next;	}
+	if (node == (index - 1))
+	{
+		aux1->next = aux2->next;
+		if (aux2->next != NULL)
+			aux2->next->prev = aux1;
+		free(to_delete);
+		return (1);
 	}
 	return (-1);
 }
